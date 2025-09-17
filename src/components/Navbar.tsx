@@ -131,7 +131,7 @@ function Navbar() {
 						<li key={item.href}>
 							<a
 								href={item.href}
-								ref={el => navRefs.current[index] = el}
+								ref={el => { navRefs.current[index] = el; }}
 								className={`transition-colors ${isActive ? 'text-[#F5EFE6]' : 'opacity-80 hover:text-[#F5EFE6]'}`}
 								onClick={(e) => handleNavClick(e, item.href)}
 							>
