@@ -175,7 +175,7 @@ export default function Home() {
       <div className={`flex flex-col items-start w-2/4 px-8 py-12 transition-opacity duration-700 ${showAboutContent ? "opacity-100" : "opacity-0"}`} style={{height: '100%'}}>
         <h2 className="text-5xl font-bold text-[#F5EFE6] mb-8 text-center w-full">About Me</h2>
         <p className="text-xl text-[#F5EFE6] text-left w-full">
-          Hi, I'm Connor. I'm a 22-year-old full-stack developer from Casper, Wyoming. I graduated <i>summa cum laude</i> from the University of Wyoming in May of 2025 with a B.S. in Computer Science and Mathematics, along with a minor in Statistics and a certificate in Cybersecurity.<br /><br />
+          Hi, I&apos;m Connor. I&apos;m a 22-year-old full-stack developer from Casper, Wyoming. I graduated <i>summa cum laude</i> from the University of Wyoming in May of 2025 with a B.S. in Computer Science and Mathematics, along with a minor in Statistics and a certificate in Cybersecurity.<br /><br />
 
           Professionally, I have hands-on experience building responsive applications with Angular, React, SQL, Docker, and a mix of other technologies. Currently, I am employed as a Full-Stack Web Developer at <a href="https://insurxcel.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#e5e0d8] transition-colors">InsurXcel</a> where I help design, develop, and maintain business applications. My background also includes tutoring advanced mathematics during my undergraduate years at The University of Wyoming.<br /><br />
 
@@ -299,9 +299,9 @@ export default function Home() {
           <div className="flex flex-row w-full max-w-[1200px] gap-12 pb-12 items-start">
             {/* Left: Text area */}
             <div className="flex-1 flex flex-col justify-center items-start pr-4">
-              <h3 className="text-3xl font-bold text-[#F5EFE6] mb-4">Let's Connect</h3>
+              <h3 className="text-3xl font-bold text-[#F5EFE6] mb-4">Let&apos;s Connect</h3>
               <p className="text-2xl text-[#F5EFE6] max-w-md">
-                Feel free to reach out for collaborations, questions, or just to say hello! I'll get back to you as soon as possible.
+                Feel free to reach out for collaborations, questions, or just to say hello! I&apos;ll get back to you as soon as possible.
               </p>
             </div>
             {/* Right: Contact Form */}
