@@ -13,7 +13,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  html, :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
@@ -22,6 +22,14 @@
 body {
   background: #F5EFE6 !important;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif !important;
   scroll-behavior: smooth;
+}
+
+.font-dm-serif-text {
+  font-family: 'DM Serif Text', serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .font-dm-serif-text, .heading-serif {
+  font-family: 'DM Serif Text', serif !important;
 }
