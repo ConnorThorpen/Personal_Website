@@ -87,13 +87,13 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target;
+    const form = e.target as HTMLFormElement;
     const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
+      name: (form.elements.namedItem('name') as HTMLInputElement)?.value,
+      email: (form.elements.namedItem('email') as HTMLInputElement)?.value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement)?.value,
     };
     const res = await fetch('/api/contact', {
       method: 'POST',
@@ -163,9 +163,11 @@ export default function Home() {
     <div className="relative flex flex-row items-center justify-between w-full max-w-[1500px]" style={{zIndex:2, height: '700px'}}>
       {/* Left image */}
       <div className={`flex-shrink-0 flex mb-32 items-center justify-center w-1/4 transition-opacity duration-700 ${showAboutContent ? "opacity-100" : "opacity-0"}`} style={{height: '100%'}}>
-        <img
+        <Image
           src="/circle_headshot.png"
           alt="Connor Thorpen Headshot Left"
+          width={200}
+          height={200}
           className="w-100 h-100 rounded-full object-cover border-4 border-[#F5EFE6]"
         />
       </div>
@@ -188,11 +190,11 @@ export default function Home() {
             <div className="flex flex-row items-center gap-2 mb-2">
               <span className="text-lg text-[#F5EFE6] font-semibold">{testimonials[current].class}</span>
               <span className="ml-2 text-yellow-400 text-xl" aria-label={`Rated ${testimonials[current].stars} out of 5`}>
-                {Array.from({ length: testimonials[current].stars }).map((_, i) => '★').join('')}
-                {Array.from({ length: 5 - testimonials[current].stars }).map((_, i) => '☆').join('')}
+                {Array.from({ length: testimonials[current].stars }).map((_, i) => "★").join("")}
+                {Array.from({ length: 5 - testimonials[current].stars }).map((_, i) => "☆").join("")}
               </span>
             </div>
-            <p className="text-[#F5EFE6] text-lg italic mb-2">"{testimonials[current].message}"</p>
+            <p className="text-[#F5EFE6] text-lg italic mb-2">&quot;{testimonials[current].message}&quot;</p>
           </div>
         )}
         <span className="text-[#F5EFE6] text-sm w-[900px] max-w-lg text-center">Real testimonials from students after a tutoring session with Connor</span>
@@ -258,17 +260,20 @@ export default function Home() {
                         poster="/project1.png"
                       />
                       {/* Overlay image */}
-                      <img
+                      <Image
                         src="/PHaST_thumbnail.png"
                         alt="Project thumbnail"
+                        fill
+                        style={{objectFit: "cover", zIndex: 2}}
                         className="absolute inset-0 w-full h-full object-cover rounded-2xl border-4 border-[#F5EFE6] shadow-lg bg-[#222] transition-opacity duration-300 pointer-events-none group-hover:opacity-0"
-                        style={{ zIndex: 2 }}
                       />
                     </div>
                   ) : (
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title + " preview"}
+                      width={480}
+                      height={320}
                       className="w-[480px] h-[320px] object-cover rounded-2xl border-4 border-[#F5EFE6] shadow-lg bg-[#222]"
                     />
                   )}
