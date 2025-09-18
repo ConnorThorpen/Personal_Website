@@ -128,7 +128,7 @@ export default function Home() {
   {/* Hero Section */}
   <section
   id="home"
-  className="w-full flex flex-col items-center my-16 py-64 relative min-h-[500px] justify-center"
+  className="w-full flex flex-col items-center my-8 sm:my-16 py-24 sm:py-64 relative min-h-[300px] sm:min-h-[500px] justify-center"
   style={{
     backgroundImage: "url('/Connor_Tutor_Solo.jpeg')", // put your image in /public
     backgroundSize: "cover",
@@ -140,13 +140,13 @@ export default function Home() {
   <div className="absolute inset-0 bg-black opacity-60 pointer-events-none z-0" />
   <div className="relative z-10 flex flex-col items-center w-full">
     <h1
-      className={`text-[clamp(2.5rem,10vw,8rem)] font-extrabold text-[#F5EFE6] text-center transition-opacity duration-800 ${showName ? "opacity-100" : "opacity-0"}`}
+      className={`text-[2.2rem] xs:text-4xl sm:text-[clamp(2.5rem,10vw,8rem)] font-extrabold text-[#F5EFE6] text-center transition-opacity duration-800 ${showName ? "opacity-100" : "opacity-0"}`}
       style={{ letterSpacing: "0.05em" }}
     >
       Connor Thorpen
     </h1>
     <h2
-      className={`mt-8 text-3xl sm:text-4xl text-[#F5EFE6] text-center font-light transition-opacity duration-800 ${showSentence ? "opacity-100" : "opacity-0"}`}
+      className={`mt-4 sm:mt-8 text-lg xs:text-xl sm:text-3xl md:text-4xl text-[#F5EFE6] text-center font-light transition-opacity duration-800 ${showSentence ? "opacity-100" : "opacity-0"}`}
     >
       Full-Stack developer focused on creating efficient, secure, and user-friendly applications.
     </h2>
@@ -154,15 +154,15 @@ export default function Home() {
 </section>
 
   {/* About Me Section */}
-  <section id="about" ref={aboutSectionRef} className="relative w-full flex flex-col items-center mt-48 mb-32">
+  <section id="about" ref={aboutSectionRef} className="relative w-full flex flex-col items-center mt-24 sm:mt-48 mb-16 sm:mb-32 px-2 xs:px-4">
     {/* Sliding bar */}
     <div
       className={`absolute right-0 top-0 h-[700px] bg-[#44444E] rounded-l-3xl transition-transform duration-700 ease-out ${showAboutBar ? "translate-x-0" : "translate-x-full"}`}
       style={{ width: "85vw", maxWidth: "85vw" }}
     />
-    <div className="relative flex flex-row items-center justify-between w-full max-w-[1500px]" style={{zIndex:2, height: '700px'}}>
+  <div className="relative flex flex-col md:flex-row items-center justify-between w-full max-w-[1500px]" style={{zIndex:2, height: 'auto', minHeight: '400px'}}>
       {/* Left image */}
-      <div className={`flex-shrink-0 flex mb-32 items-center justify-center w-1/4 transition-opacity duration-700 ${showAboutContent ? "opacity-100" : "opacity-0"}`} style={{height: '100%'}}>
+  <div className={`flex-shrink-0 flex mb-8 md:mb-32 items-center justify-center w-full md:w-1/4 transition-opacity duration-700 ${showAboutContent ? "opacity-100" : "opacity-0"}`} style={{height: '100%'}}>
         <Image
           src="/circle_headshot.png"
           alt="Connor Thorpen Headshot Left"
@@ -172,7 +172,7 @@ export default function Home() {
         />
       </div>
       {/* Center About Me content */}
-      <div className={`flex flex-col items-start w-2/4 px-8 py-12 transition-opacity duration-700 ${showAboutContent ? "opacity-100" : "opacity-0"}`} style={{height: '100%'}}>
+  <div className={`flex flex-col items-start w-full md:w-2/4 px-2 xs:px-4 md:px-8 py-6 md:py-12 transition-opacity duration-700 ${showAboutContent ? "opacity-100" : "opacity-0"}`} style={{height: '100%'}}>
         <h2 className="text-5xl font-bold text-[#F5EFE6] mb-8 text-center w-full">About Me</h2>
         <p className="text-xl text-[#F5EFE6] text-left w-full">
           Hi, I&apos;m Connor. I&apos;m a 22-year-old full-stack developer from Casper, Wyoming. I graduated <i>summa cum laude</i> from the University of Wyoming in May of 2025 with a B.S. in Computer Science and Mathematics, along with a minor in Statistics and a certificate in Cybersecurity.<br /><br />
@@ -183,10 +183,10 @@ export default function Home() {
         </p>
       </div>
       {/* Right column of text (top-aligned, matches middle body) */}
-      <div className={`flex flex-col items-center w-1/4 px-8 py-12 transition-opacity duration-700 ${showAboutContent ? "opacity-100" : "opacity-0"}`} style={{height: '100%', alignItems: 'flex-start', justifyContent: 'flex-start'}}>
+  <div className={`flex flex-col items-center w-full md:w-1/4 px-2 xs:px-4 md:px-8 py-6 md:py-12 transition-opacity duration-700 ${showAboutContent ? "opacity-100" : "opacity-0"}`} style={{height: '100%', alignItems: 'flex-start', justifyContent: 'flex-start'}}>
         {/* Rotating Testimonials Widget */}
         {testimonials.length > 0 && (
-          <div className="w-[900px] flex flex-col items-start bg-[#393943] bg-opacity-80 rounded-2xl p-6 shadow-lg border border-[#F5EFE6] min-h-[208px] max-w-lg">
+          <div className="w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg flex flex-col items-start bg-[#393943] bg-opacity-80 rounded-2xl p-4 xs:p-6 shadow-lg border border-[#F5EFE6] min-h-[120px] sm:min-h-[208px]">
             <div className="flex flex-row items-center gap-2 mb-2">
               <span className="text-lg text-[#F5EFE6] font-semibold">{testimonials[current].class}</span>
               <span className="ml-2 text-yellow-400 text-xl" aria-label={`Rated ${testimonials[current].stars} out of 5`}>
@@ -197,24 +197,24 @@ export default function Home() {
             <p className="text-[#F5EFE6] text-lg italic mb-2">&quot;{testimonials[current].message}&quot;</p>
           </div>
         )}
-        <span className="text-[#F5EFE6] text-sm w-[900px] max-w-lg text-center">Real testimonials from students after a tutoring session with Connor</span>
+  <span className="text-[#F5EFE6] text-sm w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg text-center">Real testimonials from students after a tutoring session with Connor</span>
       </div>
     </div>
   </section>
     {/* Projects Section */}
-  <section id="projects" ref={projectsSectionRef} className="relative w-full flex flex-col items-center mt-32 mb-32 min-h-[700px]">
+  <section id="projects" ref={projectsSectionRef} className="relative w-full flex flex-col items-center mt-16 sm:mt-32 mb-16 sm:mb-32 min-h-[400px] sm:min-h-[700px] px-2 xs:px-4">
         {/* Sliding bar for Projects */}
         <div
           className={`absolute left-0 top-0 bg-[#44444E] rounded-r-3xl transition-transform duration-700 ease-out ${showProjectsBar ? "-translate-x-0" : "-translate-x-full"}`}
           style={{ width: "85vw", maxWidth: "85vw", height: '100%' }}
         />
-        <div className="relative flex mb-32 flex-col w-full max-w-[1200px]" style={{zIndex:2}}>
+  <div className="relative flex mb-16 sm:mb-32 flex-col w-full max-w-[1200px]" style={{zIndex:2}}>
           {/* Projects heading */}
           <div className={`w-full py-12 transition-opacity duration-700 ${showProjectsContent ? "opacity-100" : "opacity-0"}`}> 
             <h2 className="text-5xl font-bold text-[#F5EFE6] mb-8 text-center">Projects</h2>
           </div>
           {/* Projects list */}
-          <div className={`flex flex-col gap-16 transition-opacity duration-700 ${showProjectsContent ? "opacity-100" : "opacity-0"}`}>
+          <div className={`flex flex-col gap-8 sm:gap-16 transition-opacity duration-700 ${showProjectsContent ? "opacity-100" : "opacity-0"}`}>
             {/* Example projects, extensible */}
             {[
               {
@@ -224,9 +224,9 @@ export default function Home() {
                 image: "/circle_headshot.png" // Placeholder if no video
               },
             ].map((project, idx) => (
-              <div key={project.title} className="flex flex-row items-start gap-12 bg-transparent">
+              <div key={project.title} className="flex flex-col md:flex-row items-start gap-6 sm:gap-12 bg-transparent">
                 {/* Project text */}
-                <div className="flex-1 text-left">
+                <div className="flex-1 text-left w-full md:w-auto mb-4 md:mb-0">
                   <div className="flex flex-row items-center gap-4 mb-2">
                     <h3 className="text-3xl font-bold text-[#F5EFE6]">{project.title}</h3>
                     {idx === 0 && (
@@ -247,12 +247,12 @@ export default function Home() {
                   <p className="text-2xl text-[#F5EFE6]">{project.description}</p>
                 </div>
                 {/* Project media preview */}
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 w-full md:w-auto flex justify-center">
                   {project.video ? (
-                    <div className="relative group w-[480px] h-[320px]">
+                    <div className="relative group w-full max-w-xs xs:max-w-sm sm:max-w-md md:w-[480px] md:h-[320px] h-[180px] xs:h-[220px] sm:h-[260px] md:max-w-none">
                       <video
                         src={project.video}
-                        className="w-[480px] h-[320px] object-cover rounded-2xl border-4 border-[#F5EFE6] shadow-lg bg-[#222]"
+                        className="w-full h-full object-cover rounded-2xl border-4 border-[#F5EFE6] shadow-lg bg-[#222]"
                         controls
                         loop
                         muted
@@ -274,7 +274,7 @@ export default function Home() {
                       alt={project.title + " preview"}
                       width={480}
                       height={320}
-                      className="w-[480px] h-[320px] object-cover rounded-2xl border-4 border-[#F5EFE6] shadow-lg bg-[#222]"
+                      className="w-full max-w-xs xs:max-w-sm sm:max-w-md md:w-[480px] md:h-[320px] h-[180px] xs:h-[220px] sm:h-[260px] object-cover rounded-2xl border-4 border-[#F5EFE6] shadow-lg bg-[#222]"
                     />
                   )}
                 </div>
@@ -288,27 +288,27 @@ export default function Home() {
         </div>
       </section>
   {/* Contact Section */}
-  <section id="contact" ref={contactSectionRef} className="relative w-full flex flex-col items-center mt-32 mb-0 min-h-[400px]" style={{paddingBottom: 0}}>
+  <section id="contact" ref={contactSectionRef} className="relative w-full flex flex-col items-center mt-8 sm:mt-32 mb-0 min-h-[300px] sm:min-h-[400px] px-2 xs:px-4" style={{paddingBottom: 0}}>
         {/* Sliding bar for Contact */}
         <div
           className={`absolute right-0 top-0 h-full w-[85vw] max-w-[85vw] bg-[#44444E] rounded-l-3xl transition-transform duration-700 ease-out ${showContactBar ? "translate-x-0" : "translate-x-full"}`}
           style={{ zIndex: 1 }}
         />
-        <div className={`relative flex flex-col items-center justify-center w-full max-w-[1200px] min-h-[200px] transition-opacity duration-700 ${showContactContent ? "opacity-100" : "opacity-0"}`} style={{zIndex:2}}>
+  <div className={`relative flex flex-col items-center justify-center w-full max-w-[1200px] min-h-[120px] sm:min-h-[200px] transition-opacity duration-700 ${showContactContent ? "opacity-100" : "opacity-0"}`} style={{zIndex:2}}>
           <h2 className="text-5xl font-bold text-[#F5EFE6] py-12 text-center mt-0 w-full">Contact</h2>
-          <div className="flex flex-row w-full max-w-[1200px] gap-12 pb-12 items-start">
+          <div className="flex flex-col md:flex-row w-full max-w-[1200px] gap-6 sm:gap-12 pb-8 sm:pb-12 items-start">
             {/* Left: Text area */}
-            <div className="flex-1 flex flex-col justify-center items-start pr-4">
+            <div className="flex-1 flex flex-col justify-center items-start pr-0 md:pr-4 mb-6 md:mb-0">
               <h3 className="text-3xl font-bold text-[#F5EFE6] mb-4">Let&apos;s Connect</h3>
               <p className="text-2xl text-[#F5EFE6] max-w-md">
                 Feel free to reach out for collaborations, questions, or just to say hello! I&apos;ll get back to you as soon as possible.
               </p>
             </div>
             {/* Right: Contact Form */}
-            <form className="flex flex-col gap-6 w-full max-w-xl bg-[#393943] bg-opacity-80 p-8 rounded-2xl border-2 border-[#F5EFE6]" onSubmit={handleSubmit}>
-              <div className="flex flex-row gap-6 w-full">
+            <form className="flex flex-col gap-4 sm:gap-6 w-full max-w-xl bg-[#393943] bg-opacity-80 p-4 sm:p-8 rounded-2xl border-2 border-[#F5EFE6]" onSubmit={handleSubmit}>
+              <div className="flex flex-col md:flex-row gap-4 sm:gap-6 w-full">
                 {/* Left: Name and Email */}
-                <div className="flex flex-col gap-6 w-1/2">
+                <div className="flex flex-col gap-4 sm:gap-6 w-full md:w-1/2">
                   <label className="flex flex-col text-[#F5EFE6] text-lg font-semibold">
                     Name
                     <input type="text" name="name" required className="mt-2 p-3 rounded-lg border border-[#F5EFE6] bg-[#F5EFE6] bg-opacity-10 text-black focus:outline-none focus:ring-2 focus:ring-[#F5EFE6]" />
@@ -319,7 +319,7 @@ export default function Home() {
                   </label>
                 </div>
                 {/* Right: Message */}
-                <div className="flex flex-col w-1/2">
+                <div className="flex flex-col w-full md:w-1/2 mt-4 md:mt-0">
                   <label className="flex flex-col text-[#F5EFE6] text-lg font-semibold h-full">
                     Message
                     <textarea name="message" required rows={5} className="mt-2 p-3 rounded-lg border border-[#F5EFE6] bg-[#F5EFE6] bg-opacity-10 text-black focus:outline-none focus:ring-2 focus:ring-[#F5EFE6] resize-none h-full min-h-[120px]" />
